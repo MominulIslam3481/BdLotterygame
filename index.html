@@ -1,2 +1,35 @@
-# BdLotterygame
-Bdlottery
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BD Lottery</title>
+    <style>
+        body { text-align: center; margin-top: 100px; font-family: Arial; }
+        .btn { padding: 15px 30px; font-size: 20px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
+        .btn:hover { background-color: #45a049; }
+        #result { margin-top: 30px; font-size: 24px; }
+    </style>
+</head>
+<body>
+
+<h1>Welcome to BD Lottery</h1>
+<button class="btn" onclick="playLottery()">Play Lottery</button>
+
+<div id="result"></div>
+
+<br><br>
+<a href="school.html">Visit School Section</a>
+
+<script>
+function playLottery() {
+    document.getElementById('result').innerHTML = "Checking...";
+    setTimeout(() => {
+        let outcomes = ["Congratulations! You Won!", "Sorry! Try Again!"];
+        let result = outcomes[Math.floor(Math.random() * outcomes.length)];
+        document.getElementById('result').innerHTML = result;
+    }, 3000); // 3 seconds wait
+}
+</script>
+
+</body>
+</html>
